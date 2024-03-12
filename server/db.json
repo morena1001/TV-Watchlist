@@ -1,1 +1,1546 @@
-{"words":[{"id":1,"word":"please"},{"id":2,"word":"let"},{"id":3,"word":"this"},{"id":4,"word":"work"}],"tasks":[{"id":1,"task":"sleep","completed":"yes"},{"id":2,"task":"eat","completed":"no"}]}
+{
+    "shows": [
+        {
+            "id": 1,
+            "title": "A Certain Scientific Railgun",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 2,
+            "title": "Villainess Level 99: I May Be the Hidden Boss but I'm Not the Demon Lord ",
+            "status": "current tuesday",
+            "favorite": "no"
+        },
+        {
+            "id": 3,
+            "title": "Nichijou",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 4,
+            "title": "Maoyu",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 5,
+            "title": "Hitoribocchi no Marumaruseikatsu",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 6,
+            "title": "Josee, the Tiger and the Fish",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 7,
+            "title": "Terror in Resonance",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 8,
+            "title": "Girls & Panzer",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 9,
+            "title": "Kannagi: Crazy Shrine Maidens",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 10,
+            "title": "Beyond the Boundary",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 11,
+            "title": "Durarara!!!",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 12,
+            "title": "Engaged to the Unidentified",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 13,
+            "title": "Lucky Star",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 14,
+            "title": "Phoenix",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 15,
+            "title": "The Ancient Magus' Bride",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 16,
+            "title": "7th Time Loop: The Villainess Enjoys a Carefree Life Married to Her Worst Enemy",
+            "status": "current sunday",
+            "favorite": "no"
+        },
+        {
+            "id": 17,
+            "title": "Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside",
+            "status": "current sunday",
+            "favorite": "no"
+        },
+        {
+            "id": 18,
+            "title": "Tsukimichi - Moonlit Fantasy",
+            "status": "current monday",
+            "favorite": "no"
+        },
+        {
+            "id": 19,
+            "title": "Hokkaido Gals Are Super Adorable!",
+            "status": "current monday",
+            "favorite": "no"
+        },
+        {
+            "id": 20,
+            "title": "'Tis Time for \"Torture, \" Princess",
+            "status": "current monday",
+            "favorite": "no"
+        },
+        {
+            "id": 21,
+            "title": "Bottom-Tier Character Tomozaki",
+            "status": "current wednesday",
+            "favorite": "no"
+        },
+        {
+            "id": 22,
+            "title": "Doctor Elise: The Royal Lady with the Lamp",
+            "status": "current wednesday",
+            "favorite": "no"
+        },
+        {
+            "id": 23,
+            "title": "Frieren: Beyond Journey's End",
+            "status": "current friday",
+            "favorite": "no"
+        },
+        {
+            "id": 24,
+            "title": "The Undead Unwanted Adventurer",
+            "status": "current friday",
+            "favorite": "no"
+        },
+        {
+            "id": 25,
+            "title": "The Wrong Way to Use Healing Magic",
+            "status": "current friday",
+            "favorite": "no"
+        },
+        {
+            "id": 26,
+            "title": "The Weakest Tamer Began a Journey to Pick Up Trash",
+            "status": "current friday",
+            "favorite": "no"
+        },
+        {
+            "id": 27,
+            "title": "The Apothecary Diaries ",
+            "status": "current saturday",
+            "favorite": "no"
+        },
+        {
+            "id": 28,
+            "title": "Solo Leveling",
+            "status": "current saturday",
+            "favorite": "no"
+        },
+        {
+            "id": 29,
+            "title": "A Sign of Affection",
+            "status": "current saturday",
+            "favorite": "no"
+        },
+        {
+            "id": 30,
+            "title": "She Professed Herself Pupil of the Wise Man",
+            "status": "current other",
+            "favorite": "no"
+        },
+        {
+            "id": 31,
+            "title": "Bladedance of Elementalers",
+            "status": "current other",
+            "favorite": "no"
+        },
+        {
+            "id": 32,
+            "title": "Horimiya",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 33,
+            "title": "The 8th son? Are you kidding me?",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 34,
+            "title": "Tsuredure Children",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 35,
+            "title": "Masamune-kun's Revenge",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 36,
+            "title": "The Misfit of Demon King Academy",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 37,
+            "title": "Skeleton Knight in Another World",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 38,
+            "title": "Seirei Gensoku: Spirit Chronicles",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 39,
+            "title": "Black Summoner",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 40,
+            "title": "Grimgar, Ashes, and Illusions",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 41,
+            "title": "Wise Man's Grandchild",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 42,
+            "title": "Shironeko Project ZERO Chronicle",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 43,
+            "title": "Eden's Zero",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 44,
+            "title": "Call of The Night",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 45,
+            "title": "Our Dating Story: The Experienced You and The Inexperienced Me",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 46,
+            "title": "Lycoris Recoil",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 47,
+            "title": "RWBY: Ice Queendom",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 48,
+            "title": "Uzaki-chan Wants to Hang Out!",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 49,
+            "title": "Goblin Slayer",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 50,
+            "title": "My Dress Up Darling",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 51,
+            "title": "ReLife",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 52,
+            "title": "Tower of God",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 53,
+            "title": "Mushoku Tensei",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 54,
+            "title": "Alderamin on The Sky",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 55,
+            "title": "Trapped in a Dating Sim",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 56,
+            "title": "A Couple of Cukoos",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 57,
+            "title": "Shikimori's Not Just a Cutie",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 58,
+            "title": "Why The Hell are You Here Teacher",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 59,
+            "title": "Spy x Family",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 60,
+            "title": "One Punch Man",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 61,
+            "title": "Assassin's Pride",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 62,
+            "title": "Adachi and Shimamura",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 63,
+            "title": "The Rising of the Shield Hero",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 64,
+            "title": "Love is War",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 65,
+            "title": "Love After World Domination",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 66,
+            "title": "Tonikawa, Over the Moon for You",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 67,
+            "title": "Nisekoi",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 68,
+            "title": "The Quintessential Quintuplets",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 69,
+            "title": "Konosuba",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 70,
+            "title": "Love, Chunibyo, and Other Delusions",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 71,
+            "title": "Scissor's Seven",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 72,
+            "title": "Erased",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 73,
+            "title": "Don't Toy With Me Miss Nagatoro",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 74,
+            "title": "Cells at Work",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 75,
+            "title": "Wotakoi",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 76,
+            "title": "We Never Learn: BOKUBEN",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 77,
+            "title": "Arifureta: From Commonplace to World's Strongest",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 78,
+            "title": "Magical Sempai",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 79,
+            "title": "The Daily Life of the Immortal King",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 80,
+            "title": "Mob Phsyco 100 ",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 81,
+            "title": "Do it Yourself!! ",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 82,
+            "title": "Love is Like a Cocktail",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 83,
+            "title": "My Wife is the Student Council President",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 84,
+            "title": "Chainsaw Man",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 85,
+            "title": "Beast Tamer",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 86,
+            "title": "More than a Married Couple, but Not Lovers",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 87,
+            "title": "Astra Lost in Space",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 88,
+            "title": "How a Realist Hero Rebuilt the Kingdom",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 89,
+            "title": "Dagashi Kashi",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 90,
+            "title": "BOCCHI: The Rock!",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 91,
+            "title": "That Time I Got Reincarnated as a Slime",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 92,
+            "title": "Hyouka",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 93,
+            "title": "BNA",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 94,
+            "title": "Beastars",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 95,
+            "title": "To Your Eternity",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 96,
+            "title": "Neon Genesis Evangelion",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 97,
+            "title": "Gargantia on the Verdurous Planet",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 98,
+            "title": "The Magical Revolution of the Reincarnated Princess and the Genius Young Lady",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 99,
+            "title": "My Hero Academia",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 100,
+            "title": "The Reincarnation Of The Strongest Exorcist In Another World",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 101,
+            "title": "Chillin' in My 30s after Getting Fired from the Demon King's Army",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 102,
+            "title": "The Ice Guy and His Cool Female Colleague",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 103,
+            "title": "The Eminence in Shadow",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 104,
+            "title": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 105,
+            "title": "The Angel Next Door",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 106,
+            "title": "Tomo-chan Is a Girl!",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 107,
+            "title": "Azumanga Daioh: The Animation",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 108,
+            "title": "Overlord",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 109,
+            "title": "I'm Quitting Heroing!",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 110,
+            "title": "Witch Craft Works",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 111,
+            "title": "I Can't Understand What My Husband Is Saying",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 112,
+            "title": "Laid-Back Camp",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 113,
+            "title": "I'm Standing on a Million Lives",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 114,
+            "title": "ROOM CAMP",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 115,
+            "title": "The Faraway Paladin",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 116,
+            "title": "The Devil is a Part-Timer!",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 117,
+            "title": "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 118,
+            "title": "So I'm a Spider, So What?",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 119,
+            "title": "Skip and Loafer",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 120,
+            "title": "Kubo-san Won't Let me be Invisible",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 121,
+            "title": "The Aristocrat's Otherworldly Adventure: Serving Gods Who Go Too Far",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 122,
+            "title": "Demon Slayer",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 123,
+            "title": "KONOSUBA -An Explosion on This Wonderful World!",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 124,
+            "title": "TONIKAWA",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 125,
+            "title": "My Love Story with Yamada-kun at Lv999",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 126,
+            "title": "A Galaxy Next Door",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 127,
+            "title": "My Clueless First Friend",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 128,
+            "title": "Girls' Last Tour",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 129,
+            "title": "I GOT A CHEAT SKILL IN ANOTHER WORLD AND BECAME AN UNRIVALED IN THE REAL WORLD, TOO",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 130,
+            "title": "MASHLE: MAGIC AND MUSCLES ",
+            "status": "watchlist",
+            "favorite": "no"
+        },
+        {
+            "id": 131,
+            "title": "Hell's Paradise",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 132,
+            "title": "Sonny Boy",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 133,
+            "title": "Kaina of the Great Snow Sea",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 134,
+            "title": "Yuyushiki",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 135,
+            "title": "The Girl From The Other Side",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 136,
+            "title": "Handa-kun",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 137,
+            "title": "Super Cub",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 138,
+            "title": "Saga of Tanya the Evil",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 139,
+            "title": "Tonari no Seki-kun: The Master of Killing Time",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 140,
+            "title": "Rokka -Braves of the Six Flowers-",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 141,
+            "title": "Break Ups",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 142,
+            "title": "Amanchu!",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 143,
+            "title": "Reborn as a Vending Machine, I Now Wander the Dungeon",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 144,
+            "title": "The Great Cleric",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 145,
+            "title": "Kotoura-san",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 146,
+            "title": "The Girl I Like Forgot Her Glasses",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 147,
+            "title": "Zom 100: Bucket List of the Dead",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 148,
+            "title": "Dragon Pilot",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 149,
+            "title": "The Orbital Children",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 150,
+            "title": "I'm in Love with the Villainess",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 151,
+            "title": "The Saint's Magic Power is Omnipotent",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 152,
+            "title": "Berserk of Gluttony",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 153,
+            "title": "I'm Giving the Disgraced Noble Lady I Rescued a Crash Course in Naughtiness",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 154,
+            "title": "JUJUTSU KAISEN",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 155,
+            "title": "A Returner's Magic Should Be Special",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 156,
+            "title": "Tearmoon Empire",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 157,
+            "title": "Barakamon",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 158,
+            "title": "Wonder Egg Priority",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 159,
+            "title": "Cyberpunk: Edgerunners",
+            "status": "finished",
+            "favorite": "no"
+        },
+        {
+            "id": 160,
+            "title": "DARLING in the FRANXX",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 161,
+            "title": "Re:ZERO -Starting Life in Another World-",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 162,
+            "title": "Cautious Hero: The Hero is Overpowered but Overly Cautious",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 163,
+            "title": "Princess Connect! Re: Dive",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 164,
+            "title": "Infinite Dendrogram",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 165,
+            "title": "The Demon Sword Master of Excalibur Academy",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 166,
+            "title": "My Teen Romantic Comedy",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 167,
+            "title": "K-ON",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 168,
+            "title": "Naruto",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 169,
+            "title": "Moyashimon",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 170,
+            "title": "The World is Still Beautiful",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 171,
+            "title": "Hundred",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 172,
+            "title": "How clumsy you are, Miss Ueno",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 173,
+            "title": "Engage Kiss",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 174,
+            "title": "Sengoku Youko",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 175,
+            "title": "Snow White With The Red Hair",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 176,
+            "title": "The Dawn of The Witch",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 177,
+            "title": "El-Hazard: The Wanderers",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 178,
+            "title": "The Millionare Detective",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 179,
+            "title": "In The Land of Leadale",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 180,
+            "title": "Rent a Girlfriend",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 181,
+            "title": "Zombie Land Saga",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 182,
+            "title": "Assassination Classroom",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 183,
+            "title": "The Irregular at Magic High School",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 184,
+            "title": "The Greatest Demon Lord Reborn as a Typical Nobody",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 185,
+            "title": "Suppose a Kid from the Last Dungeon Boonies moved to a starter town",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 186,
+            "title": "Love Flops",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 187,
+            "title": "I'm the Villainess, So I'm Taming the Final Boss",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 188,
+            "title": "Shinobi no Ittoki",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 189,
+            "title": "Death March to the Parallel World Rhapsody",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 190,
+            "title": "Daily Lives of High School Boys",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 191,
+            "title": "Isekai Cheat Magician",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 192,
+            "title": "Wagnaria",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 193,
+            "title": "Skull-face Bookseller Honda-san",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 194,
+            "title": "Osamake: Romcom Where The Childhood Friend Won't Lose",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 195,
+            "title": "The World God Only Knows",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 196,
+            "title": "Sword Art Online",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 197,
+            "title": "Metallic Rouge",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 198,
+            "title": "The Twelve Kingdoms",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 199,
+            "title": "Attack on Titans",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 200,
+            "title": "Ranking of Kings",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 201,
+            "title": "Hortensia SAGA",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 202,
+            "title": "Granblue Fatntasy: The Animation",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 203,
+            "title": "The Demon Girl Next Door",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 204,
+            "title": "Black Clover",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 205,
+            "title": "How Not to Summon a Demon Lord",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 206,
+            "title": "Kill la Kill",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 207,
+            "title": "Log Horizon",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 208,
+            "title": "Chivalry of a Failed Knight",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 209,
+            "title": "Reborn to Master the Blade: From Hero-King to Extraordinary Squire",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 210,
+            "title": "Red Data Girl",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 211,
+            "title": "Kuma Kuma Kuma Bear",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 212,
+            "title": "Didn't I say to make my abilities average in the next life",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 213,
+            "title": "My Isekai Life: I Gained a Second Character Class and Became the Strongest Sage in the World",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 214,
+            "title": "Magical Destroyers",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 215,
+            "title": "Handyman Saitou in another world",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 216,
+            "title": "Ascendance of a Bookworm",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 217,
+            "title": "Mikagura School Suite",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 218,
+            "title": "Summoned to Another World for a Second Time ",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 219,
+            "title": "Spice and Wolf",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 220,
+            "title": "Classroom of the Elite",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 221,
+            "title": "Atelier Ryza: Ever Darkness & the Secret Hideout The Animation",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 222,
+            "title": "Saint Cecilia & Pastor Lawrence",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 223,
+            "title": "Am I Actually the Strongest?",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 224,
+            "title": "In/Spectre",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 225,
+            "title": "Classroom for Heroes",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 226,
+            "title": "Liar, Liar",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 227,
+            "title": "My Little Monster",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 228,
+            "title": "High School Prodigies Have It Easy Even In Another World",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 229,
+            "title": "Watamote",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 230,
+            "title": "My Next Life as a Villainess: All Routes Lead to Doom!",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 231,
+            "title": "Noragami",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 232,
+            "title": "The Reflection",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 233,
+            "title": "My Unique Skills Makes Me OP even at Level 1 ",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 234,
+            "title": "Blast of Tempest",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 235,
+            "title": "A Girl & Her Guard Dog",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 236,
+            "title": "Reign of the Seven Spellblades",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 237,
+            "title": "KamiErabi GOD.app",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 238,
+            "title": "Butareba -The Story of a Man Turned into a Pig-",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 239,
+            "title": "Lord Marksman and Vanadis",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 240,
+            "title": "MF Ghost",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 241,
+            "title": "OVERTAKE!",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 242,
+            "title": "SHY",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 243,
+            "title": "Undead Unluck",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 244,
+            "title": "Stardust Telepath",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 245,
+            "title": "My Daughter Left the Nest and Returned an S-Rank Adventurer",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 246,
+            "title": "UNDER NINJA",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 247,
+            "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 248,
+            "title": "The Kingdoms of Ruin",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 249,
+            "title": "I Shall Survive Using Potions",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 250,
+            "title": "16bit Sensation: Another Layer",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 251,
+            "title": "Shangri-La Frontier",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 252,
+            "title": "A Playthrough of a Certain Dude's VRMMO Life",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 253,
+            "title": "Dr. STONE",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 254,
+            "title": "The Foolish Angel Dances with the Devil",
+            "status": "stopped",
+            "favorite": "no"
+        },
+        {
+            "id": 255,
+            "title": "When Supernatural Battles Became Commonplace",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 256,
+            "title": "Time of Eve",
+            "status": "finished",
+            "favorite": "yes"
+        },
+        {
+            "id": 257,
+            "title": "March comes in like a lion",
+            "status":"current other",
+            "favorite": "no"
+        }
+    ]
+}
