@@ -2,10 +2,12 @@ body {
     background-color: rgb(228, 217, 195);
     font-family: "Montserrat";
     color: rgb(85, 65, 32);
+    overflow-y: hidden;
 }
 
 .title {
     font-size: 40px;
+    margin-left: 10px
 }
 
 .form-container {
@@ -144,4 +146,45 @@ body {
     cursor: pointer;
     background-color: rgb(185, 141, 69);
     color: white;
+}
+
+
+.output {
+    position: relative;
+    overflow-y: auto;
+    max-height: 100%;
+    /* scrollbar-width: none; */
+    /* border: 1px solid black; */
+    height: 650px;
+}
+
+.list {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    margin-bottom: 12px;
+    margin-left: 6px;
+}
+
+.show-title {
+    font-size: 18px;
+    text-decoration: none;
+    color: inherit
+}
+
+.status {
+    margin: 0px 10px;
+    font-size: 12px;
+    position: relative;
+    top: 5px;
+}
+
+.item i {
+    position: relative;
+    top: 2px;
 }

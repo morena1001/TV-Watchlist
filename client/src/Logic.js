@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 class counter {
     static count = 1;
@@ -23,13 +24,25 @@ export function Model() {
         .then((data) => {
             for (let i = 0; i < data.length; i++) {
                 ReadItem(data[i]);
+                // document.getElementById("list").appendChild(ReadItem(data[i]));
             }
         });
     });
 
     return (
         <>
-            <ul className="list" id="list"></ul>
+            <ul className="list" id="list">
+                {/* <li id='1' className='item'>
+                        {/* <span className='show-title'>
+                            Nichijou
+                        </span> */}
+                        {/* <Link className='show-title' to='/shows/1'>Nichijou</Link>            
+                        <span className="status">
+                            watchlist
+                        </span>
+                        <i class="fa-solid fa-star"></i>
+                </li> */}
+            </ul>
         </>
     );
 }
@@ -39,7 +52,41 @@ export function CreateItem(e) {
 }
 
 function ReadItem(data) {
-    console.log(data);
+    // counter.count++;
+    // return (
+    //     <li id='${data.id}' className='item'>
+    //         {/* <span className='show-title'>
+    //             Nichijou
+    //         </span> */}
+    //         <Link className='show-title' to='/shows/1'>${data.title}</Link>            
+    //         <span className="status">
+    //             ${data.status}
+    //         </span>
+    //         <i class="fa-solid fa-star"></i>
+    //     </li>
+    // );
+    // console.log(data.title);
+    let newItem = document.createElement("li");
+    newItem.setAttribute("class", "item");
+    newItem.setAttribute("id", data.id);
+
+    let newItemLink = document.createElement("a");
+    newItemLink.setAttribute("class", "show-title");
+    newItemLink.setAttribute("href", "/shows/" + data.id);
+    newItemLink.innerHTML = data.title;
+
+    let newItemSpan = document.createElement("Span");
+    newItemSpan.setAttribute("class", "status");
+    newItemSpan.innerHTML = data.status;
+
+    let newItemFav = document.createElement("i");
+    newItemFav.setAttribute("class", data.favorite == "yes" ? "fa-solid fa-star" : "");
+
+    newItem.appendChild(newItemLink);
+    newItem.appendChild(newItemSpan);
+    newItem.appendChild(newItemFav);
+
+    document.getElementById("list").appendChild(newItem);
 }
 
 export function UpdateItem(e) {
