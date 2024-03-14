@@ -39,7 +39,7 @@ export function CreateItem(e) {
 }
 
 function ReadItem(data) {
-    
+    console.log(data);
 }
 
 export function UpdateItem(e) {
