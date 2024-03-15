@@ -1,6 +1,5 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 class counter {
     static count = 1;
@@ -8,7 +7,6 @@ class counter {
 
 export function Model() {
     useEffect(() => {
-        // status, favorite, day
         let status = document.forms["form"]["status preset"].value;
         let day = document.forms["form"]["day preset"].value;
         let favorite = document.forms["form"]["favorite preset"].value;
@@ -24,7 +22,6 @@ export function Model() {
         .then((data) => {
             for (let i = 0; i < data.length; i++) {
                 ReadItem(data[i]);
-                // document.getElementById("list").appendChild(ReadItem(data[i]));
             }
         });
     });
@@ -52,20 +49,6 @@ export function CreateItem(e) {
 }
 
 function ReadItem(data) {
-    // counter.count++;
-    // return (
-    //     <li id='${data.id}' className='item'>
-    //         {/* <span className='show-title'>
-    //             Nichijou
-    //         </span> */}
-    //         <Link className='show-title' to='/shows/1'>${data.title}</Link>            
-    //         <span className="status">
-    //             ${data.status}
-    //         </span>
-    //         <i class="fa-solid fa-star"></i>
-    //     </li>
-    // );
-    // console.log(data.title);
     let newItem = document.createElement("li");
     newItem.setAttribute("class", "item");
     newItem.setAttribute("id", data.id);
@@ -80,13 +63,14 @@ function ReadItem(data) {
     newItemSpan.innerHTML = data.status;
 
     let newItemFav = document.createElement("i");
-    newItemFav.setAttribute("class", data.favorite == "yes" ? "fa-solid fa-star" : "");
+    newItemFav.setAttribute("class", data.favorite === "yes" ? "fa-solid fa-star" : "");
 
     newItem.appendChild(newItemLink);
     newItem.appendChild(newItemSpan);
     newItem.appendChild(newItemFav);
 
     document.getElementById("list").appendChild(newItem);
+    counter.count++;
 }
 
 export function UpdateItem(e) {
