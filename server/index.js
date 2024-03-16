@@ -14,7 +14,15 @@ app.use(express.urlencoded({extended: true}));
 app.get("/shows", (req, res) => {
   let status = req.query.status;
   let favorite = req.query.favorite;
+  let search = req.query.search;
 
+  if (search != undefined && search != "") {
+    search = search.replaceAll("%20", " ");
+    console.log(data.shows.filter((show) => show.title.toLowerCase().includes(search)));
+    res.send(data.shows.filter((show) => show.title.toLowerCase().includes(search)));
+    return;
+  }
+  
   if (status == undefined || status == "") {
     if (favorite == undefined || favorite == "") {
       console.log(data.shows);

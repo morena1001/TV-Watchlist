@@ -6,7 +6,9 @@ class counter {
 }
 
 export function Model() {
+
     useEffect(() => {
+        document.getElementById("list").innerHTML = "";
         let status = document.forms["form"]["status preset"].value;
         let day = document.forms["form"]["day preset"].value;
         let favorite = document.forms["form"]["favorite preset"].value;
@@ -17,7 +19,7 @@ export function Model() {
         
         fetch("/shows?status=" + (status === "All" ? "" : status) + 
                     "&day=" + (day === "All" ? "" : day) + 
-                    "&favorite" + (favorite === "All" ? "" : favorite))
+                    "&favorite=" + (favorite === "All" ? "" : favorite))
         .then((res) => res.json())
         .then((data) => {
             for (let i = 0; i < data.length; i++) {
@@ -44,6 +46,39 @@ export function Model() {
     );
 }
 
+export function FilterList() {
+    document.getElementById("list").innerHTML = "";
+    let status = document.forms["form"]["status preset"].value;
+    let day = document.forms["form"]["day preset"].value;
+    let favorite = document.forms["form"]["favorite preset"].value;
+
+    let url = "/shows?" + (status === "All" ? "" : ("status=" + status)) + 
+        (day === "All" ? "" : (status === "All" ? ("day=" + day) : ("&day=" + day))) +
+        (favorite === "All" ? "" : (status === "All" && day == "All" ? ("favorite=" + favorite) : ("&favorite=" + favorite)))
+    
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        for (let i = 0; i < data.length; i++) {
+            ReadItem(data[i]);
+        }
+    });
+}
+
+export function SearchList() {
+    document.getElementById("list").innerHTML = "";
+    let search = document.forms["form"]["search"].value;
+    search = search.replaceAll(" ", "%20");
+
+    fetch("/shows?search=" + search)
+    .then((res) => res.json())
+    .then((data) => {
+        for (let i = 0; i < data.length; i++) {
+            ReadItem(data[i]);
+        }
+    });
+}
+
 export function CreateItem(e) {
 
 }
@@ -63,7 +98,7 @@ function ReadItem(data) {
     newItemSpan.innerHTML = data.status;
 
     let newItemFav = document.createElement("i");
-    newItemFav.setAttribute("class", data.favorite === "yes" ? "fa-solid fa-star" : "");
+    newItemFav.setAttribute("class", data.favorite === "yes" ? "fa-solid fa-star" : " ");
 
     newItem.appendChild(newItemLink);
     newItem.appendChild(newItemSpan);

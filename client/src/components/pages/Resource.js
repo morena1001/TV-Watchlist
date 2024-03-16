@@ -38,10 +38,6 @@ export function Resource() {
 }
 
 function viewItem(data) {
-    // console.log(data);
-    // let itemContainer = document.createElement("div");
-    // itemContainer.setAttribute("class", "item-container");
-
     let itemWrapper = document.createElement("div");
     itemWrapper.setAttribute("class", "item-wrapper");
     itemWrapper.setAttribute("id", "item-wrapper");
