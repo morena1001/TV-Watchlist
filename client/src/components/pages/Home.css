@@ -168,7 +168,8 @@ body {
 .item {
     display: flex;
     margin-bottom: 12px;
-    margin-left: 6px;
+    margin-left: 16px;
+    position: relative;
 }
 
 .show-title {
@@ -180,11 +181,15 @@ body {
 .status {
     margin: 0px 10px;
     font-size: 12px;
-    position: relative;
-    top: 5px;
+    position: absolute;
+    /* position: relative */
+    /* top: 5px; */
+    right: 0px;
 }
 
 .item i {
-    position: relative;
-    top: 2px;
+    position: absolute;
+    left: -20px;
+    /* position: relative;
+    top: 2px; */
 }

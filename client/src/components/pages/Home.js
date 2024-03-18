@@ -1,5 +1,4 @@
 import React from 'react';
-// import '../../App.css';
 import { useEffect } from 'react';
 import './Home.css';
 import { Model, FilterList, SearchList } from "../../Logic";
@@ -48,7 +47,7 @@ function Home() {
                                 <option value="All">All</option>
                                 <option value="current">Currently Watching</option>
                                 <option value="watchlist">Watchlist</option>
-                                <option value="stoped">Stopped Watching</option>
+                                <option value="stopped">Stopped Watching</option>
                                 <option value="finished">Finished watching</option>
                             </select>
                             <span className='preset-text'>Favorite:</span>
@@ -115,12 +114,6 @@ function setup() {
         document.getElementById("day text").style.display = "none";
         document.getElementById("day preset").style.display = "none";
     }
-    // document.getElementById("input").addEventListener("keypress", function(e) {
-    //     if (e.target.value !== "") {
-
-    //     }
-    //     // console.log(e.target.value);
-    // });
 }
 
 function hideDay() {
@@ -136,65 +129,127 @@ function hideDay() {
 }
 
 function filterBy() {
-    let listCount = document.getElementById("list").childElementCount;
     let status = document.forms["form"]["status preset"].value;
     let day = document.forms["form"]["day preset"].value;
     let favorite = document.forms["form"]["favorite preset"].value;
     for (let i = 0; i < document.getElementById("list").childElementCount; i++) {
-        if (favorite === "All" || favorite === (document.getElementById("list").childNodes[i].lastChild.className === 
-            "fa-solid fa-star" ? "yes" : "no")) {
+        if (favorite !== "All" && (document.getElementById("list").childNodes[i].lastChild.className === 
+            "fa-solid fa-star" ? "yes" : "no") !== favorite) {
+            document.getElementById("list").childNodes[i].style.display = "none";
             continue;
         }
-        
-        document.getElementById("list").removeChild(document.getElementById("list").childNodes[i]);
-        i--;
-        // if (status === "current") {
-        //     // && day !== "All" &&
-        //     // document.getElementById("list").childNodes[i].childNodes[1].innerHTML !== "current " + day) {
-        //     // console.log(document.getElementById("list").childNodes[i].firstChild.innerHTML)
-        // }
+
+        if (status !== "All") {
+            if (status === "current") {
+                if (day !== "All"  && document.getElementById("list").childNodes[i].childNodes[1].innerHTML !== (status + " " + day)) {
+                    document.getElementById("list").childNodes[i].style.display = "none";
+                    continue;
+                }
+            }
+            if (!document.getElementById("list").childNodes[i].childNodes[1].innerHTML.includes(status)){
+                document.getElementById("list").childNodes[i].style.display = "none";
+                continue;
+            }
+        }
+        document.getElementById("list").childNodes[i].style.display = "inline"; 
     }
+    document.forms["form"]["sort preset"].value = "none";
+    sortBy();
 }
 
 function sortBy() {
     let sort = document.forms["form"]["sort preset"].value;
     let listCount = document.getElementById("list").childElementCount;
+    let arr = Array(listCount);
 
-    if (sort === "alphabetic") { 
-        for (let outer = 0; outer < listCount; outer++) {
-            for (let inner = 1; inner < listCount - outer; inner++) {
-                if (document.getElementById("list").childNodes[inner - 1].firstChild.innerHTML > 
-                    document.getElementById("list").childNodes[inner].firstChild.innerHTML) {
-                    document.getElementById("list").insertBefore(
-                        document.getElementById("list").childNodes[inner], 
-                        document.getElementById("list").childNodes[inner - 1])
+    for (let i = 0; i < listCount; i++) {
+        arr[i] = document.getElementById("list").childNodes[i];
+    }
+    mergeSort(sort, arr, 0, listCount - 1);
+    document.getElementById("list").innerHTML = "";
+    for (let i = 0; i < listCount; i++) {
+        document.getElementById("list").appendChild(arr[i]);
+    }
+}
+
+function mergeSort(sort, arr, l, r) {
+    if (l >= r) {
+        return;
+    }
+
+    var m = l + parseInt((r - l) / 2);
+    mergeSort(sort, arr, l, m);
+    mergeSort(sort, arr, m + 1, r);
+    merge(sort, arr, l, m, r);
+}
+
+function merge(sort, arr, l, m, r) {
+    var n1 = m - l + 1;
+    var n2 = r - m;
+
+    var L = new Array(n1);
+    var R = new Array(n2);
+
+    for (var i = 0; i < n1; i++) {
+        L[i] = arr[l + i];
+    }
+    for (var j = 0; j < n2; j++) {
+        R[j] = arr[m + 1 + j];
+    }
+
+    var i = 0;
+    var j = 0;
+    var k = l;
+
+    while (i < n1 && j < n2) {
+        switch(sort) {
+            case "alphabetic":
+                if (L[i].firstChild.innerHTML <= R[j].firstChild.innerHTML) {
+                    arr[k] = L[i];
+                    i++;
                 }
-            } 
+                else {
+                    arr[k] = R[j];
+                    j++;
+                }
+                k++;
+            break;
+            
+            case "status":
+                if (sortMap[L[i].childNodes[1].innerHTML] <= sortMap[R[j].childNodes[1].innerHTML]) {
+                    arr[k] = L[i];
+                    i++;
+                }
+                else {
+                    arr[k] = R[j];
+                    j++;
+                }
+                k++;
+            break;
+
+            case "none":
+                if (L[i].id <= R[j].id) {
+                    arr[k] = L[i];
+                    i++;
+                }
+                else {
+                    arr[k] = R[j];
+                    j++;
+                }
+                k++;
+            break;
         }
     }
-    else if (sort == "status") {
-        for (let outer = 0; outer < listCount; outer++) {
-            for (let inner = 1; inner < listCount - outer; inner++) {
-                if (sortMap[document.getElementById("list").childNodes[inner - 1].childNodes[1].innerHTML] > 
-                    sortMap[document.getElementById("list").childNodes[inner].childNodes[1].innerHTML]) {
-                    document.getElementById("list").insertBefore(
-                        document.getElementById("list").childNodes[inner], 
-                        document.getElementById("list").childNodes[inner - 1])
-                }
-            } 
-        }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
     }
-    else {
-        for (let outer = 0; outer < listCount; outer++) {
-            for (let inner = 1; inner < listCount - outer; inner++) {
-                if (parseInt(document.getElementById("list").childNodes[inner - 1].id) > 
-                    parseInt(document.getElementById("list").childNodes[inner].id)) {
-                    document.getElementById("list").insertBefore(
-                        document.getElementById("list").childNodes[inner], 
-                        document.getElementById("list").childNodes[inner - 1])
-                }
-            } 
-        }
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
     }
 }
 
