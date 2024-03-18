@@ -48,7 +48,7 @@ function Home() {
                                 <option value="current">Currently Watching</option>
                                 <option value="watchlist">Watchlist</option>
                                 <option value="stopped">Stopped Watching</option>
-                                <option value="finished">Finished watching</option>
+                                <option value="finished">Finished Watching</option>
                             </select>
                             <span className='preset-text'>Favorite:</span>
                             <select name="favorite preset" id="favorite preset" className="favorite-presets">
@@ -68,7 +68,7 @@ function Home() {
                                 <option value="saturday">Saturday</option>
                                 <option value="other">Other</option>
                             </select>
-                            <button className='filter-button' id='filter button' onClick={filterBy}>
+                            <button className='filter-button' id='filter button' name="update" onClick={filterBy}>
                                 Filter
                             </button>
                         </div>
@@ -214,7 +214,7 @@ function merge(sort, arr, l, m, r) {
                 }
                 k++;
             break;
-            
+
             case "status":
                 if (sortMap[L[i].childNodes[1].innerHTML] <= sortMap[R[j].childNodes[1].innerHTML]) {
                     arr[k] = L[i];
