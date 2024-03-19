@@ -27,7 +27,7 @@ function Home() {
         <>
             <div className="title-container">
                 <div className="title-wrapper">
-                    <h1 className="title">TV shows DB</h1>
+                    <h1 className="title">TV shows Database</h1>
                 </div>
             </div>
 
@@ -71,6 +71,9 @@ function Home() {
                             <button className='filter-button' id='filter button' name="update" onClick={filterBy}>
                                 Filter
                             </button>
+                            <button className='filter-button reset' id='reset filter button' name="reset" onClick={resetFilter}>
+                                Reset
+                            </button>
                         </div>
 
                         <div className="sort-container">
@@ -109,11 +112,22 @@ function setup() {
     document.getElementById("filter button").addEventListener("click", function (e) {
         e.preventDefault();
     });
+    document.getElementById("reset filter button").addEventListener("click", function (e) {
+        e.preventDefault();
+    })
 
-    if (document.forms["form"]["status preset"].value !== "current") {
-        document.getElementById("day text").style.display = "none";
-        document.getElementById("day preset").style.display = "none";
-    }
+    hideDay();
+
+    let search = localStorage.getItem("search");
+    let status = localStorage.getItem("status");
+    let day = localStorage.getItem("status");
+    let favorite = localStorage.getItem("favorite");
+    let sort = localStorage.getItem("sort");
+
+    // if (search !== "") {
+    //     document.forms["form"]["search"].value = search;
+    //     SearchList(); 
+    // }
 }
 
 function hideDay() {
@@ -153,6 +167,26 @@ function filterBy() {
         }
         document.getElementById("list").childNodes[i].style.display = "inline"; 
     }
+    localStorage.setItem("status", status);
+    localStorage.setItem("day", day);
+    localStorage.setItem("favorite", favorite);
+
+    document.forms["form"]["sort preset"].value = "none";
+    sortBy();
+}
+
+function resetFilter() {
+    document.forms["form"]["status preset"].value = "All";
+    document.forms["form"]["day preset"].value = "All";
+    document.forms["form"]["favorite preset"].value = "All";
+    
+    hideDay();
+    FilterList();
+
+    localStorage.setItem("status", document.forms["form"]["status preset"].value);
+    localStorage.setItem("day", document.forms["form"]["day preset"].value);
+    localStorage.setItem("favorite", document.forms["form"]["favorite preset"].value);
+
     document.forms["form"]["sort preset"].value = "none";
     sortBy();
 }
@@ -170,6 +204,7 @@ function sortBy() {
     for (let i = 0; i < listCount; i++) {
         document.getElementById("list").appendChild(arr[i]);
     }
+    localStorage.setItem("sort", sort);
 }
 
 function mergeSort(sort, arr, l, r) {
@@ -228,7 +263,7 @@ function merge(sort, arr, l, m, r) {
             break;
 
             case "none":
-                if (L[i].id <= R[j].id) {
+                if (parseInt(L[i].id) <= parseInt(R[j].id)) {
                     arr[k] = L[i];
                     i++;
                 }

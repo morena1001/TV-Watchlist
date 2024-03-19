@@ -1,8 +1,6 @@
 import React from 'react';
-// import '../../App.css';
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import './Home.css';
+import { useParams, Link } from 'react-router-dom';
 import './Resource.css';
 
 
@@ -17,6 +15,9 @@ export function Resource() {
 
     return (
         <>
+        <Link className="link" to="/">
+            <button className="back-button" ><i class="fa-solid fa-arrow-left"></i></button>
+        </Link>
             <div className="item-container" id='item-container'>
                 {/* <div className="item-wrapper" id="item-wrapper">
                     <div className="item-title" id='item-title'>A Certain Scientific Railgun</div>
@@ -76,7 +77,6 @@ function setup() {
     document.getElementById("status update").style.display = "none";
     document.getElementById("day update").style.display = "none";
     document.getElementById("favorite update").style.display = "none";
-    document.getElementById("update").style.display = "none";
 }
 
 function viewItem(data) {
@@ -86,6 +86,7 @@ function viewItem(data) {
 
     let itemTitle = document.createElement("div");
     itemTitle.setAttribute("class", "item-title");
+    itemTitle.setAttribute("id", "item title");
     itemTitle.innerHTML = data.title;
 
     let itemTitleUpdate = document.createElement("input");
@@ -101,6 +102,7 @@ function viewItem(data) {
 
     let statusSpan = document.createElement("span");
     statusSpan.setAttribute("class", "status-span");
+    statusSpan.setAttribute("id", "status span");
     statusSpan.innerHTML = data.status;
 
     let statusSpanSelect = document.createElement("select");
@@ -109,24 +111,20 @@ function viewItem(data) {
     statusSpanSelect.setAttribute("class", "status-update");
 
     let statusOption1 = document.createElement("option");
-    statusOption1.value = "All";
-    statusOption1.innerHTML = "All";
+    statusOption1.value = "current";
+    statusOption1.innerHTML = "Currently Watching";
 
     let statusOption2 = document.createElement("option");
-    statusOption2.value = "current";
-    statusOption2.innerHTML = "Currently Watching";
+    statusOption2.value = "watchlist";
+    statusOption2.innerHTML = "Watchlist";
 
     let statusOption3 = document.createElement("option");
-    statusOption3.value = "watchlist";
-    statusOption3.innerHTML = "Watchlist";
+    statusOption3.value = "stopped";
+    statusOption3.innerHTML = "Stopped Watching";
 
     let statusOption4 = document.createElement("option");
-    statusOption4.value = "stopped";
-    statusOption4.innerHTML = "Stopped Watching";
-    
-    let statusOption5 = document.createElement("option");
-    statusOption5.value = "finished";
-    statusOption5.innerHTML = "Finished Watching";
+    statusOption4.value = "finished";
+    statusOption4.innerHTML = "Finished Watching";
 
     let daySelect = document.createElement("select");
     daySelect.setAttribute("name", "day update");
@@ -134,40 +132,36 @@ function viewItem(data) {
     daySelect.setAttribute("class", "day-update");
 
     let dayOption1 = document.createElement("option");
-    dayOption1.value = "All";
-    dayOption1.innerHTML = "All";
+    dayOption1.value = "sunday";
+    dayOption1.innerHTML = "Sunday";
 
     let dayOption2 = document.createElement("option");
-    dayOption2.value = "sunday";
-    dayOption2.innerHTML = "Sunday";
+    dayOption2.value = "monday";
+    dayOption2.innerHTML = "Monday";
     
     let dayOption3 = document.createElement("option");
-    dayOption3.value = "monday";
-    dayOption3.innerHTML = "Monday";
+    dayOption3.value = "tuesday";
+    dayOption3.innerHTML = "Tuesday";
 
     let dayOption4 = document.createElement("option");
-    dayOption4.value = "tuesday";
-    dayOption4.innerHTML = "Tuesday";
+    dayOption4.value = "wednesday";
+    dayOption4.innerHTML = "Wednesday";
 
     let dayOption5 = document.createElement("option");
-    dayOption5.value = "wednesday";
-    dayOption5.innerHTML = "Wednesday";
+    dayOption5.value = "thursday";
+    dayOption5.innerHTML = "Thursday";
 
     let dayOption6 = document.createElement("option");
-    dayOption6.value = "thursday";
-    dayOption6.innerHTML = "Thursday";
+    dayOption6.value = "friday";
+    dayOption6.innerHTML = "Friday";
 
     let dayOption7 = document.createElement("option");
-    dayOption7.value = "friday";
-    dayOption7.innerHTML = "Friday";
+    dayOption7.value = "saturday";
+    dayOption7.innerHTML = "Saturday";
 
     let dayOption8 = document.createElement("option");
-    dayOption8.value = "saturday";
-    dayOption8.innerHTML = "Saturday";
-
-    let dayOption9 = document.createElement("option");
-    dayOption9.value = "other";
-    dayOption9.innerHTML = "Other";
+    dayOption8.value = "other";
+    dayOption8.innerHTML = "Other";
 
     let favoriteContainer = document.createElement("div");
     favoriteContainer.setAttribute("class", "favorite-container");
@@ -175,6 +169,7 @@ function viewItem(data) {
 
     let favoriteSpan = document.createElement("span");
     favoriteSpan.setAttribute("class", "favorite-span");
+    favoriteSpan.setAttribute("id", "favorite span");
     favoriteSpan.innerHTML = data.favorite;
 
     let favoriteSelect = document.createElement("select");
@@ -183,16 +178,12 @@ function viewItem(data) {
     favoriteSelect.setAttribute("class", "favorite-update");
 
     let favoriteOption1 = document.createElement("option");
-    favoriteOption1.value = "All";
-    favoriteOption1.innerHTML = "All";
+    favoriteOption1.value = "no";
+    favoriteOption1.innerHTML = "No";
 
     let favoriteOption2 = document.createElement("option");
-    favoriteOption2.value = "no";
-    favoriteOption2.innerHTML = "No";
-    
-    let favoriteOption3 = document.createElement("option");
-    favoriteOption3.value = "yes";
-    favoriteOption3.innerHTML = "Yes";
+    favoriteOption2.value = "yes";
+    favoriteOption2.innerHTML = "Yes";
 
     let editButton = document.createElement("button");
     editButton.setAttribute("class", "edit-button");
@@ -205,7 +196,9 @@ function viewItem(data) {
     let updateButton = document.createElement("button");
     updateButton.setAttribute("class", "update-button");
     updateButton.setAttribute("id", "update");
-    updateButton.innerHTML = "Update";
+
+    let icon2 = document.createElement("i");
+    icon2.setAttribute("class", "fa-solid fa-trash");
 
     itemWrapper.appendChild(itemTitle);
     itemWrapper.appendChild(itemTitleUpdate);
@@ -216,7 +209,6 @@ function viewItem(data) {
     statusSpanSelect.appendChild(statusOption2);
     statusSpanSelect.appendChild(statusOption3);
     statusSpanSelect.appendChild(statusOption4);
-    statusSpanSelect.appendChild(statusOption5);
     statusSpanSelect.value = data.status.includes("current") ? "current" : data.status;
     statusContainer.appendChild(statusSpanSelect);
     statusSpanSelect.oninput = hideDay;
@@ -229,7 +221,6 @@ function viewItem(data) {
     daySelect.appendChild(dayOption6);
     daySelect.appendChild(dayOption7);
     daySelect.appendChild(dayOption8);
-    daySelect.appendChild(dayOption9);
     daySelect.value = data.status.includes("current") ? data.status.substring(8) : "All";
     statusContainer.appendChild(daySelect);
 
@@ -238,13 +229,13 @@ function viewItem(data) {
 
     favoriteSelect.appendChild(favoriteOption1);
     favoriteSelect.appendChild(favoriteOption2);
-    favoriteSelect.appendChild(favoriteOption3);
     favoriteSelect.value = data.favorite;
     favoriteContainer.appendChild(favoriteSelect);
 
     itemWrapper.appendChild(editButton);
-    editButton.append(icon);
+    editButton.appendChild(icon);
     itemWrapper.appendChild(updateButton);
+    updateButton.appendChild(icon2);
 
     document.getElementById("item-container").appendChild(itemWrapper);
     setup();
@@ -262,26 +253,41 @@ function hideDay() {
 
 function update() {
     if (document.getElementById("edit").innerHTML !== "Cancel") {
+        document.getElementById("item title").style.display = "none";
+        document.getElementById("status span").style.display = "none";
+        document.getElementById("favorite span").style.display = "none";
+
         document.getElementById("title update").style.display = "inline";
         document.getElementById("status update").style.display = "inline";
         document.getElementById("day update").style.display = document.getElementById("status update").value === "current" ? "inline" : "none";
         document.getElementById("favorite update").style.display = "inline";
-        document.getElementById("update").style.display = "inline";
         
         document.getElementById("edit").innerHTML = "Cancel";
         document.getElementById("edit").style.width = "90px";
+
+        document.getElementById("update").innerHTML = "Update";
+        document.getElementById("update").style.width = "90px";
     }
     else {
+        document.getElementById("item title").style.display = "inline";
+        document.getElementById("status span").style.display = "inline";
+        document.getElementById("favorite span").style.display = "inline";
+
         document.getElementById("title update").style.display = "none";
         document.getElementById("status update").style.display = "none";
         document.getElementById("day update").style.display = "none";
         document.getElementById("favorite update").style.display = "none";
-        document.getElementById("update").style.display = "none";
 
         let icon = document.createElement("i");
         icon.setAttribute("class", "fa-solid fa-pen-to-square");
         document.getElementById("edit").innerHTML = "";
         document.getElementById("edit").appendChild(icon);
         document.getElementById("edit").style.width = "55px";
+
+        let icon2 = document.createElement("i");
+        icon2.setAttribute("class", "fa-solid fa-trash");
+        document.getElementById("update").innerHTML = "";
+        document.getElementById("update").appendChild(icon2);
+        document.getElementById("update").style.width = "55px";
     }
 }
