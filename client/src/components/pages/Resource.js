@@ -84,6 +84,15 @@ function viewItem(data) {
     itemWrapper.setAttribute("class", "item-wrapper");
     itemWrapper.setAttribute("id", "item-wrapper");
 
+    let titleContainer = document.createElement("div");
+    titleContainer.setAttribute("class", "title-container");
+
+    let itemTitleSpan = document.createElement("span");
+    itemTitleSpan.setAttribute("class", "resource-title-span");
+    itemTitleSpan.setAttribute("id", "title span");
+    itemTitleSpan.innerHTML = "Title:";
+    itemTitleSpan.style.display = "none";
+
     let itemTitle = document.createElement("div");
     itemTitle.setAttribute("class", "item-title");
     itemTitle.setAttribute("id", "item title");
@@ -125,6 +134,12 @@ function viewItem(data) {
     let statusOption4 = document.createElement("option");
     statusOption4.value = "finished";
     statusOption4.innerHTML = "Finished Watching";
+
+    let daySpan = document.createElement("span");
+    daySpan.setAttribute("class", "day-span");
+    daySpan.setAttribute("id", "day span");
+    daySpan.innerHTML = "Day:";
+    daySpan.style.display = "none";
 
     let daySelect = document.createElement("select");
     daySelect.setAttribute("name", "day update");
@@ -200,8 +215,10 @@ function viewItem(data) {
     let icon2 = document.createElement("i");
     icon2.setAttribute("class", "fa-solid fa-trash");
 
-    itemWrapper.appendChild(itemTitle);
-    itemWrapper.appendChild(itemTitleUpdate);
+    itemWrapper.appendChild(titleContainer);
+    titleContainer.appendChild(itemTitleSpan);
+    titleContainer.appendChild(itemTitle);
+    titleContainer.appendChild(itemTitleUpdate);
     itemWrapper.appendChild(statusContainer);
     statusContainer.appendChild(statusSpan);
 
@@ -211,7 +228,7 @@ function viewItem(data) {
     statusSpanSelect.appendChild(statusOption4);
     statusSpanSelect.value = data.status.includes("current") ? "current" : data.status;
     statusContainer.appendChild(statusSpanSelect);
-    statusSpanSelect.oninput = hideDay;
+    statusContainer.appendChild(daySpan);
 
     daySelect.appendChild(dayOption1);
     daySelect.appendChild(dayOption2);
@@ -223,6 +240,7 @@ function viewItem(data) {
     daySelect.appendChild(dayOption8);
     daySelect.value = data.status.includes("current") ? data.status.substring(8) : "All";
     statusContainer.appendChild(daySelect);
+    statusSpanSelect.oninput = hideDay;
 
     itemWrapper.appendChild(favoriteContainer);
     favoriteContainer.appendChild(favoriteSpan);
@@ -244,9 +262,11 @@ function viewItem(data) {
 function hideDay() {
     let status = document.getElementById("status update").value;
     if (status === "current") {
+        document.getElementById("day span").style.display = "inline";
         document.getElementById("day update").style.display = "inline";
     }
     else {
+        document.getElementById("day span").style.display = "none";
         document.getElementById("day update").style.display = "none";
     }
 }
@@ -257,8 +277,10 @@ function update() {
         document.getElementById("status span").style.display = "none";
         document.getElementById("favorite span").style.display = "none";
 
+        document.getElementById("title span").style.display = "inline";
         document.getElementById("title update").style.display = "inline";
         document.getElementById("status update").style.display = "inline";
+        document.getElementById("day span").style.display = document.getElementById("status update").value === "current" ? "inline" : "none";
         document.getElementById("day update").style.display = document.getElementById("status update").value === "current" ? "inline" : "none";
         document.getElementById("favorite update").style.display = "inline";
         
@@ -273,8 +295,10 @@ function update() {
         document.getElementById("status span").style.display = "inline";
         document.getElementById("favorite span").style.display = "inline";
 
+        document.getElementById("title span").style.display = "none";
         document.getElementById("title update").style.display = "none";
         document.getElementById("status update").style.display = "none";
+        document.getElementById("day span").style.display = "none";
         document.getElementById("day update").style.display = "none";
         document.getElementById("favorite update").style.display = "none";
 

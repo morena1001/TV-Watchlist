@@ -1,5 +1,6 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import { Model, FilterList, SearchList } from "../../Logic";
 
@@ -98,7 +99,9 @@ function Home() {
 
             <div className="new-item-container">
                 <div className="new-item-wrapper">
-                    <button className="new-item-button"><i className="fa-solid fa-plus"></i></button>
+                    <Link className="link" to='/new'>
+                        <button className="new-item-button"><i className="fa-solid fa-plus"></i></button>
+                    </Link>
                 </div>
             </div>
         </>

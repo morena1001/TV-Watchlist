@@ -1,0 +1,98 @@
+.back-button {
+    margin-left: 8px;
+    margin-top: 8px;
+    background-color: white;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(98, 104, 80);
+    font-family: inherit;
+    font-size: 14px;
+    width: 30px;
+}
+
+.back-button:hover {
+    cursor: pointer;
+    background-color: rgb(185, 141, 69);
+    color: white;
+}
+
+.form {
+    margin-left: 16px;
+}
+
+.title-container {
+    margin-bottom: 8px;
+    margin-top: 12px;
+    margin-left: 0px;
+}
+
+.title-span {
+    font-size: 40px;
+}
+
+.title-input {
+    margin-left: 10px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(98, 104, 80);
+    font-family: inherit;
+    padding: 3px 14px;
+    font-size: 40px;
+    width: 500px;
+}
+
+.statusContainer {
+    margin-left: -6px;
+}
+
+.status-option {
+    margin: 8px 6px 3px 6px;
+    font-family: inherit;
+    border-radius: 20px;
+    padding: 3px 4px;
+    font-size: 12px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.day-option {
+    margin: 0px 6px;
+    font-family: inherit;
+    border-radius: 20px;
+    padding: 3px 4px;
+    font-size: 12px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.favoriteContainer {
+    margin-left: -6px;
+}
+
+.favorite-option {
+    margin: 0px 6px;
+    font-family: inherit;
+    border-radius: 20px;
+    padding: 3px 4px;
+    font-size: 12px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.create-button {
+    margin-top: 11px;
+    padding: 3px 0px;
+    background-color: white;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgb(98, 104, 80);
+    font-family: inherit;
+    font-size: 18px;
+    width: 90px;
+}
+
+.create-button:hover {
+    cursor: pointer;
+    background-color: rgb(185, 141, 69);
+    color: white;
+}

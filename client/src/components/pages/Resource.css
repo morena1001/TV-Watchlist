@@ -1,3 +1,13 @@
+.title-container {
+    margin-left: 16px;
+    display: flex;
+}
+
+.resource-title-span {
+    font-size: 40px;
+    margin-left: 16px;
+}
+
 .item-title {
     font-size: 40px;
     margin-left: 10px;
@@ -40,7 +50,6 @@
 
 .title-update {
     margin-left: 10px;
-    margin-top: 12px;
     border-radius: 20px;
     border-style: solid;
     border-color: rgb(98, 104, 80);
