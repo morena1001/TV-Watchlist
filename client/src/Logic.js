@@ -1,9 +1,12 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 class counter {
-    static count = 1;
+    static count = 0;
+    static counted = false;
 }
+
 let sortMap = {};
 sortMap["current sunday"] = 1;
 sortMap["current monday"] = 2;
@@ -109,7 +112,42 @@ export function SearchList() {
 }
 
 export function CreateItem(e) {
+    checkShows(e).then(data => {
+        for (let i = 0; i < data.length; i++) {
+            if (e.title === data[i].title) {
+                alert("Show is already in database");
+                return;
+            }
+        }
+        
+        if (!counter.counted) {
+            counter.count = data.length + 1;
+        }
 
+        let string = `
+            {
+                "id": ${counter.count},
+                "title": "${e.title}",
+                "status": "${e.status}",
+                "favorite": "${e.favorite}"
+            }`;
+        
+        fetch("/shows", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: string,
+        })
+        .then((res) => res.json())
+        .then((data) => {console.log(data)});
+    });
+}
+
+async function checkShows(e) {
+    const response = await fetch("/shows");
+    const data = await response.json();
+    return data;
 }
 
 function ReadItem(data) {
@@ -134,7 +172,6 @@ function ReadItem(data) {
     newItem.appendChild(newItemFav);
 
     document.getElementById("list").appendChild(newItem);
-    counter.count++;
 }
 
 export function UpdateItem(e) {

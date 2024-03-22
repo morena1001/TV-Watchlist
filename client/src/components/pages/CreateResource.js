@@ -1,10 +1,40 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 // import './Home.css';
 import './CreateResource.css';
+import { CreateItem } from '../../Logic';
 
 export function CreateResource() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        setup();
+    }, []);
+
+    function setup() {
+        document.getElementById("create").addEventListener("click", function(e) {
+            e.preventDefault();
+            checkInput();
+            if (checkInput()) {
+                let title = document.forms["form"]["title"].value;
+                let status = document.forms["form"]["status"].value;
+                let day = document.forms["form"]["day"].value;
+                let favorite = document.forms["form"]["favorite"].value;
+                let string = '{"title": "' + title + '", "status": "' + (status + (day === "" ? "" : (" " + day))) + '", "favorite": "' + favorite + '"}';
+                CreateItem(JSON.parse(string));
+                const newPromise = new Promise((resolve, reject) => {
+                    setTimeout(function() {
+                        resolve(true);
+                    }, 1500);
+                });
+
+                newPromise.then(() => {
+                    navigate("/");
+                })
+            }
+        });
+    }
+
     return (
         <>
             <Link className="link" to="/">
@@ -17,15 +47,15 @@ export function CreateResource() {
                 </div>
                 <div className="statusContainer">
                     <span className="status-span">Status:</span>
-                    <select name="status-option" id="status-option" className="status-option" onInput={hideDay}>
+                    <select name="status" id="status option" className="status-option" onInput={hideDay}>
                         <option value=""></option>
                         <option value="current">Currently Watching</option>
                         <option value="watchlist">Watchlist</option>
                         <option value="stopped">Stopped Watching</option>
                         <option value="finished">Finished watching</option>
                     </select>
-                    <span className="day-span">Day:</span>
-                    <select name="day-option" id="day-option" className="day-option">
+                    <span className="day-span" id='day-span'>Day:</span>
+                    <select name="day" id="day-option" className="day-option">
                         <option value=""></option>
                         <option value="sunday">Sunday</option>
                         <option value="monday">Monday</option>
@@ -39,27 +69,58 @@ export function CreateResource() {
                 </div>
                 <div className="favoriteContainer">
                     <span className="favorite-span">Favorite:</span>
-                    <select name="favorite-option" id="favorite-option" className="favorite-option">
+                    <select name="favorite" id="favorite-option" className="favorite-option">
                         <option value=""></option>
                         <option value="no">No</option>
                         <option value="yes">Yes</option>
                     </select>
                 </div>
-                <button className='create-button' id='create' name='create'>
-                        Create
-                </button>
-
+                {/* <Link className="link" id='link' to="/"> */}
+                    <button className='create-button' id='create' name='create'>
+                            Create
+                    </button>
+                {/* </Link> */}
             </form>
         </>
     );
 }
 
 function hideDay() {
-    let status = document.getElementById("status update").value;
+    let status = document.forms["form"]["status"].value;
     if (status === "current") {
-        document.getElementById("day update").style.display = "inline";
+        document.getElementById("day-span").style.display = "inline";
+        document.getElementById("day-option").style.display = "inline";
     }
     else {
-        document.getElementById("day update").style.display = "none";
+        document.forms["form"]["day"].value = "";
+        document.getElementById("day-span").style.display = "none";
+        document.getElementById("day-option").style.display = "none";
     }
+}
+
+function checkInput() {
+    let title = document.forms["form"]["title"].value;
+    let status = document.forms["form"]["status"].value;
+    let day = document.forms["form"]["day"].value;
+    let favorite = document.forms["form"]["favorite"].value;
+    let message = "";
+
+    if (title === "") {
+        message += "Title";
+    }
+    if (status === "") {
+        message += message.length == 0 ? "Status" : ", status";
+    }
+    if (status === "current" && day === "") {
+        message += message.length == 0 ? "Day" : ", day";
+    }
+    if (favorite === "") {
+        message += message.length == 0 ? "Favorite" : ", favorite";
+    }
+    if (message.length != 0) {
+        message += "\nCannot be blank";
+        alert(message);
+        return false;
+    }
+    return true;
 }

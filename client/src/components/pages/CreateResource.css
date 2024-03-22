@@ -55,6 +55,10 @@
     width: fit-content;
 }
 
+.day-span {
+    display: none;
+}
+
 .day-option {
     margin: 0px 6px;
     font-family: inherit;
@@ -63,6 +67,7 @@
     font-size: 12px;
     cursor: pointer;
     width: fit-content;
+    display: none;
 }
 
 .favoriteContainer {

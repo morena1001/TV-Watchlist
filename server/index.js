@@ -286,21 +286,20 @@ app.get("/shows/:id", (req, res) => {
   res.send(data.shows.filter((show) => show.id == req.params.id));
 });
 
-// app.post("/api/tasks")
+app.post("/shows", (req, res) => {
+  response = {
+    id: req.body.id,
+    title: req.body.title,
+    status: req.body.status,
+    favorite: req.body.favorite
+  }
 
-// app.post("/api/tasks", (req, res) => {
-//   response = {
-//     id: req.body.id,
-//     task: req.body.task,
-//     completed: req.body.completed
-//   }
+  data.shows.push(response);
+  fs.writeFileSync("./server/db.json", JSON.stringify(data));
 
-//   data.tasks.push(response);
-//   fs.writeFileSync("./server/db.json", JSON.stringify(data));
-
-//   console.log(response);
-//   res.send(JSON.stringify(response));
-// });
+  console.log(response);
+  res.send(JSON.stringify(response));
+});
 
 // app.put("/api/tasks/:id", (req, res) => {
 //   for (let i = 0; i < data.tasks.length; i++) {

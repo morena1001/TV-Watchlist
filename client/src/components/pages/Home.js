@@ -140,6 +140,7 @@ function hideDay() {
         document.getElementById("day preset").style.display = "inline";
     }
     else {
+        document.forms["form"]["day preset"].value = "All";
         document.getElementById("day text").style.display = "none";
         document.getElementById("day preset").style.display = "none";
     }
