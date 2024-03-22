@@ -21,16 +21,7 @@ export function CreateResource() {
                 let day = document.forms["form"]["day"].value;
                 let favorite = document.forms["form"]["favorite"].value;
                 let string = '{"title": "' + title + '", "status": "' + (status + (day === "" ? "" : (" " + day))) + '", "favorite": "' + favorite + '"}';
-                CreateItem(JSON.parse(string));
-                const newPromise = new Promise((resolve, reject) => {
-                    setTimeout(function() {
-                        resolve(true);
-                    }, 1500);
-                });
-
-                newPromise.then(() => {
-                    navigate("/");
-                })
+                CreateItem(JSON.parse(string), navigate);
             }
         });
     }

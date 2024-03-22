@@ -111,7 +111,7 @@ export function SearchList() {
     });
 }
 
-export function CreateItem(e) {
+export function CreateItem(e, navigate) {
     checkShows(e).then(data => {
         for (let i = 0; i < data.length; i++) {
             if (e.title === data[i].title) {
@@ -141,6 +141,7 @@ export function CreateItem(e) {
         })
         .then((res) => res.json())
         .then((data) => {console.log(data)});
+        navigate("/");
     });
 }
 
