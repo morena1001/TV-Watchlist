@@ -301,35 +301,38 @@ app.post("/shows", (req, res) => {
   res.send(JSON.stringify(response));
 });
 
-// app.put("/api/tasks/:id", (req, res) => {
-//   for (let i = 0; i < data.tasks.length; i++) {
-//     if (data.tasks[i].id == req.params.id) {
-//       data.tasks[i].completed = req.body.completed;
-//       fs.writeFileSync("./server/db.json", JSON.stringify(data));
+app.put("/shows/:id", (req, res) => {
+  for (let i = 0; i < data.shows.length; i++) {
+    if (data.shows[i].id == req.body.id) {
+      data.shows[i].title = req.body.title;
+      data.shows[i].status = req.body.status;
+      data.shows[i].favorite = req.body.favorite;
+      fs.writeFileSync("./server/db.json", JSON.stringify(data));
 
-//       console.log(data.tasks[i]);
-//       res.send(data.tasks[i]);
-//       return;
-//     }
-//   }
-//   console.log("404");
-//   res.sendStatus(404);
-// });
+      console.log(data.shows[i]);
+      res.send(data.shows[i]);
+      return;
+    }
+  }
+  console.log("404");
+  res.sendStatus(404);
+});
 
-// app.delete("/api/tasks/:id", (req, res) => {
-//   for (let i = 0; i < data.tasks.length; i++) {
-//     if (data.tasks[i].id == req.params.id) {
-//       data.tasks.splice(i, 1);
-//       fs.writeFileSync("./server/db.json", JSON.stringify(data));
+app.delete("/shows/:id", (req, res) => {
+  // let show = data.shows.filter((show) => show.id == req.params.id);
+  for (let i = 0; i < data.shows.length; i++) {
+    if (data.shows[i].id == req.params.id) {
+      data.shows.splice(i, 1);
+      fs.writeFileSync("./server/db.json", JSON.stringify(data));
 
-//       console.log(data.tasks);
-//       res.send(data.tasks);
-//       return;
-//     }
-//   }
-//   console.log("404");
-//   res.sendStatus(404);
-// });
+      console.log(data.shows);
+      res.send(data.shows);
+      return;
+    }
+  }
+  console.log("404");
+  res.sendStatus(404); 
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

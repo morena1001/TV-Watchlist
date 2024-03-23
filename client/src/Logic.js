@@ -176,11 +176,25 @@ function ReadItem(data) {
 }
 
 export function UpdateItem(e) {
-
+    fetch("/shows/" + e.id, {
+        method: "PUT",
+        headers: {
+            "Content-type": "application/json"
+        },
+        body: e
+    })
+    .then((res) => res.json())
+    .then((data) => {console.log(JSON.stringify(data))});
+    window.location.reload();
 }
 
-function DeleteItem(e) {
-
+export function DeleteItem(id, navigate) {
+    fetch("/shows/" + id, {
+        method: "DELETE"
+    })
+    .then((res) => res.json())
+    .then((data) => {console.log(JSON.stringify(data))});
+    navigate("/");
 }
 
 

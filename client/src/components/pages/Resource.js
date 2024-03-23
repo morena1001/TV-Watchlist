@@ -1,16 +1,18 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { DeleteItem, UpdateItem } from '../../Logic';
 import './Resource.css';
 
 
 export function Resource() {
     const { id } = useParams();
-
+    const navigate = useNavigate();
+    
     useEffect(() => {
         fetch("/shows/" + id)
         .then((res) => res.json())
-        .then((data) => {viewItem(data[0])});
+        .then((data) => {viewItem(data[0], id, navigate)});        
     }, []);
 
     return (
@@ -79,7 +81,7 @@ function setup() {
     document.getElementById("favorite update").style.display = "none";
 }
 
-function viewItem(data) {
+function viewItem(data, id, navigate) {
     let itemWrapper = document.createElement("div");
     itemWrapper.setAttribute("class", "item-wrapper");
     itemWrapper.setAttribute("id", "item-wrapper");
@@ -210,7 +212,10 @@ function viewItem(data) {
 
     let updateButton = document.createElement("button");
     updateButton.setAttribute("class", "update-button");
-    updateButton.setAttribute("id", "update");
+    updateButton.setAttribute("id", "update"); 
+    updateButton.onclick = function() {
+        buttonTwoOption(id, navigate);
+    };
 
     let icon2 = document.createElement("i");
     icon2.setAttribute("class", "fa-solid fa-trash");
@@ -272,46 +277,101 @@ function hideDay() {
 }
 
 function update() {
+    let itemTitle = document.getElementById("item title");
+    let statusSpan = document.getElementById("status span");
+    let favoriteSpan = document.getElementById("favorite span");
+
+    let titleSpan = document.getElementById("title span");
+    let titleUpdate = document.getElementById("title update");
+    let statusUpdate = document.getElementById("status update");
+    let daySpan = document.getElementById("day span");
+    let dayUpdate = document.getElementById("day update");
+    let favoriteUpdate = document.getElementById("favorite update");
+
+    let edit = document.getElementById("edit");
+    let update = document.getElementById("update");
+
     if (document.getElementById("edit").innerHTML !== "Cancel") {
-        document.getElementById("item title").style.display = "none";
-        document.getElementById("status span").style.display = "none";
-        document.getElementById("favorite span").style.display = "none";
+        itemTitle.style.display = "none";
+        statusSpan.style.display = "none";
+        favoriteSpan.style.display = "none";
 
-        document.getElementById("title span").style.display = "inline";
-        document.getElementById("title update").style.display = "inline";
-        document.getElementById("status update").style.display = "inline";
-        document.getElementById("day span").style.display = document.getElementById("status update").value === "current" ? "inline" : "none";
-        document.getElementById("day update").style.display = document.getElementById("status update").value === "current" ? "inline" : "none";
-        document.getElementById("favorite update").style.display = "inline";
+        titleSpan.style.display = "inline";
+        titleUpdate.style.display = "inline";
+        statusUpdate.style.display = "inline";
+        daySpan.style.display = statusUpdate.value === "current" ? "inline" : "none";
+        dayUpdate.style.display = statusUpdate.value === "current" ? "inline" : "none";
+        favoriteUpdate.style.display = "inline";
         
-        document.getElementById("edit").innerHTML = "Cancel";
-        document.getElementById("edit").style.width = "90px";
+        edit.innerHTML = "Cancel";
+        edit.style.width = "90px";
 
-        document.getElementById("update").innerHTML = "Update";
-        document.getElementById("update").style.width = "90px";
+        update.innerHTML = "Update";
+        update.style.width = "90px";
     }
     else {
-        document.getElementById("item title").style.display = "inline";
-        document.getElementById("status span").style.display = "inline";
-        document.getElementById("favorite span").style.display = "inline";
+        itemTitle.style.display = "inline";
+        statusSpan.style.display = "inline";
+        favoriteSpan.style.display = "inline";
 
-        document.getElementById("title span").style.display = "none";
-        document.getElementById("title update").style.display = "none";
-        document.getElementById("status update").style.display = "none";
-        document.getElementById("day span").style.display = "none";
-        document.getElementById("day update").style.display = "none";
-        document.getElementById("favorite update").style.display = "none";
+        titleSpan.style.display = "none";
+        titleUpdate.style.display = "none";
+        statusUpdate.style.display = "none";
+        daySpan.style.display = "none";
+        dayUpdate.style.display = "none";
+        favoriteUpdate.style.display = "none";
+
+        titleUpdate.value = itemTitle.innerHTML;
+        if (statusSpan.innerHTML.includes("current")) {
+            statusUpdate.value = "current";
+            dayUpdate.value = statusSpan.innerHTML.substring(8);
+        }
+        else {
+            statusUpdate.value = statusSpan.innerHTML;
+        }
+        favoriteUpdate.value = favoriteSpan.innerHTML;
 
         let icon = document.createElement("i");
         icon.setAttribute("class", "fa-solid fa-pen-to-square");
-        document.getElementById("edit").innerHTML = "";
-        document.getElementById("edit").appendChild(icon);
-        document.getElementById("edit").style.width = "55px";
+        edit.innerHTML = "";
+        edit.appendChild(icon);
+        edit.style.width = "55px";
 
         let icon2 = document.createElement("i");
         icon2.setAttribute("class", "fa-solid fa-trash");
-        document.getElementById("update").innerHTML = "";
-        document.getElementById("update").appendChild(icon2);
-        document.getElementById("update").style.width = "55px";
+        update.innerHTML = "";
+        update.appendChild(icon2);
+        update.style.width = "55px";
+    }
+}
+
+function buttonTwoOption(id, navigate) {
+    let buttonOption = document.getElementById("update").innerHTML;
+    let newTitle = document.getElementById("title update").value;
+    let newStatus = document.getElementById("status update").value === "current" ?
+        (document.getElementById("status update").value + " " + document.getElementById("day update").value) :
+        document.getElementById("status update").value;
+    let newFavorite = document.getElementById("favorite update").value;
+
+    if (buttonOption === "Update") {
+        fetch("/shows/" + id)
+        .then((res) => res.json())
+        .then((data) => {
+            if (newTitle === data[0].title && newStatus === data[0].status && newFavorite === data[0].favorite) {
+                return;
+            }
+            
+            let string = 
+            `{
+                "id": ${id},
+                "title": "${newTitle}",
+                "status": "${newStatus}",
+                "favorite": "${newFavorite}"
+            }`;
+            UpdateItem(string);
+        });
+    }
+    else {
+        DeleteItem(id, navigate);
     }
 }
