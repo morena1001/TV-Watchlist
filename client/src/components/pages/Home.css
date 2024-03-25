@@ -40,6 +40,7 @@ body {
     border-color: rgb(98, 104, 80);
     font-family: inherit;
     font-size: 14px;
+    text-align: center;
     width: 80px;
 }
 
@@ -175,7 +176,8 @@ body {
 .show-title {
     font-size: 18px;
     text-decoration: none;
-    color: inherit
+    color: inherit;
+    margin-right: 130px;
 }
 
 .status {
@@ -190,10 +192,125 @@ body {
 .item i {
     position: absolute;
     left: -20px;
+    font-size: 16px;
     /* position: relative;
     top: 2px; */
 }
 
 .reset {
     margin-left: 6px;
+}
+
+@media screen and (max-width: 1075px) {
+    .show-title {
+        font-size: 16px;
+    }
+
+    .item i {
+        left: -18px;
+    }
+}
+
+@media screen and (max-width: 975px) {
+    .show-title {
+        font-size: 14px;
+    }
+
+    .item i {
+        font-size: 14px;
+        left: -16px;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .show-title {
+        font-size: 12px;
+    }
+
+    .item i {
+        font-size: 12px;
+        left: -14px;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .show-title {
+        font-size: 10px;
+    }
+
+    .item i{
+        font-size: 10px;
+        left: -12px;
+    }
+
+    .status {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .title {
+        font-size: 25px;
+    }
+
+    .input {
+        font-size: 12px;
+        width: 200px;
+    }
+    
+    .search-button {
+        font-size: 12px;
+        width: 60px;
+    }
+
+    .preset-container {
+        font-size: 10px;
+        display: grid;
+        place-items: center;
+    }
+
+    .preset-text {
+        margin-top: 0px;
+    }
+
+    .status-presets {
+        font-size: 8px;
+        margin-bottom: 4px;
+    }
+
+    .favorite-presets {
+        font-size: 8px;
+        margin-bottom: 4px;
+    }
+
+    .day-presets {
+        font-size: 8px;
+        margin-bottom: 4px;
+    }
+
+    .filter-button {
+        font-size: 9px;
+        width: 40px;
+    }
+
+    .filter-button {
+        margin-top: 6px;
+    }
+
+    .reset {
+        margin-top: 4px;
+        margin-left: 0px;
+    }
+
+    .sort-container {
+        font-size: 10px;
+    }
+
+    .sort-text {
+        margin-top: 4px;
+    }
+    
+    .sort-presets {
+        font-size: 8px;
+    }
 }

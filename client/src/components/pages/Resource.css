@@ -6,6 +6,7 @@
 .resource-title-span {
     font-size: 40px;
     margin-left: 16px;
+    margin-top: 5px;
 }
 
 .item-title {
@@ -125,4 +126,20 @@
     cursor: pointer;
     background-color: rgb(185, 141, 69);
     color: white;
+}
+
+
+
+@media screen and (max-width: 635px) {
+    .resource-title-span {
+        font-size: 20px;
+    }
+
+    .item-title {
+        font-size: 20px;
+    }
+
+    .title-update {
+        font-size: 20px;
+    }
 }

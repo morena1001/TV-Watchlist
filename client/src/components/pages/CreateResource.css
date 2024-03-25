@@ -101,3 +101,13 @@
     background-color: rgb(185, 141, 69);
     color: white;
 }
+
+@media screen and (max-width: 635px) {
+    .title-span {
+        font-size: 20px;
+    }
+
+    .title-input {
+        font-size: 20px;
+    }
+}
